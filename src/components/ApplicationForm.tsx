@@ -1,75 +1,94 @@
-// src/components/ResumeUpload.tsx
 'use client';
 
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import axios from 'axios'
+import ResumeUpload from './ResumeUpload'
 
-type ParsedData = {
-  name?: string
-  email?: string
-  phone?: string
+type FormData = {
+  name: string
+  email: string
+  phone: string
+  coverLetter: string
 }
 
-type ResumeUploadProps = {
-  onParsed: (data: ParsedData) => void
-}
+export default function ApplicationForm({ jobId }: { jobId: string }) {
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>()
+  const [submitting, setSubmitting] = useState(false)
 
-export default function ResumeUpload({ onParsed }: ResumeUploadProps) {
-  const [file, setFile] = useState<File | null>(null)
-  const [uploading, setUploading] = useState(false)
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setFile(e.target.files[0])
+  const onSubmit = async (data: FormData) => {
+    setSubmitting(true)
+    try {
+      const response = await axios.post('/api/apply', { ...data, jobId })
+      console.log('Application submitted:', response.data)
+      // Handle successful submission (e.g., show success message, redirect)
+    } catch (error) {
+      console.error('Error submitting application:', error)
+      // Handle error (e.g., show error message)
+    } finally {
+      setSubmitting(false)
     }
   }
 
-  const handleUpload = async () => {
-    if (!file) return
-
-    setUploading(true)
-    const formData = new FormData()
-    formData.append('resume', file)
-
-    try {
-      const response = await axios.post('/api/parse-resume', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      })
-      onParsed(response.data)
-    } catch (error) {
-      console.error('Error parsing resume:', error)
-      // Handle error (e.g., show error message)
-    } finally {
-      setUploading(false)
-    }
+  const handleParsedResume = (parsedData: Partial<FormData>) => {
+    Object.entries(parsedData).forEach(([key, value]) => {
+      setValue(key as keyof FormData, value as string)
+    })
   }
 
   return (
-    <div className="mb-6">
-      <label htmlFor="resume" className="block text-sm font-medium text-gray-700 mb-2">
-        Upload Resume
-      </label>
-      <div className="flex items-center space-x-4">
-        <input 
-          id="resume"
-          type="file" 
-          onChange={handleFileChange} 
-          accept=".pdf,.doc,.docx"
-          className="block w-full text-sm text-gray-500
-            file:mr-4 file:py-2 file:px-4
-            file:rounded-md file:border-0
-            file:text-sm file:font-semibold
-            file:bg-blue-50 file:text-blue-700
-            hover:file:bg-blue-100"
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <ResumeUpload onParsed={handleParsedResume} />
+
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
+        <input
+          id="name"
+          type="text"
+          {...register('name', { required: 'Name is required' })}
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />
-        <button 
-          onClick={handleUpload} 
-          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-          disabled={!file || uploading}
-        >
-          {uploading ? 'Parsing...' : 'Parse Resume'}
-        </button>
+        {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
       </div>
-    </div>
+
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+        <input
+          id="email"
+          type="email"
+          {...register('email', { required: 'Email is required' })}
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+        />
+        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
+        <input
+          id="phone"
+          type="tel"
+          {...register('phone')}
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="coverLetter" className="block text-sm font-medium text-gray-700">Cover Letter</label>
+        <textarea
+          id="coverLetter"
+          {...register('coverLetter')}
+          rows={4}
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+        ></textarea>
+      </div>
+
+      <button 
+        type="submit" 
+        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        disabled={submitting}
+      >
+        {submitting ? 'Submitting...' : 'Submit Application'}
+      </button>
+    </form>
   )
 }
