@@ -21,8 +21,6 @@ If you find Easy Apply useful, please give it a star! It helps others discover t
 3. Submit a pull request with a clear and detailed description of your changes. 📝
 4. Suggest new features or improvements you think should be included to enhance the platform for both companies and applicants. 💡
 
-![Easy Apply Application Process](images/easy-apply-application-process.png)
-
 ## 🚀 Feature Requests
 
 We encourage you to suggest features that could help make job applications easier and more seamless for users, as well as features that would benefit companies using our platform. Whether it's new functionalities, integrations, or UI/UX improvements, we value your input! 🎨
