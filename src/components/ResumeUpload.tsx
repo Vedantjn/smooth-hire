@@ -58,12 +58,12 @@ export default function ResumeUpload({ onParsed }: ResumeUploadProps) {
             file:mr-4 file:py-2 file:px-4
             file:rounded-md file:border-0
             file:text-sm file:font-semibold
-            file:bg-blue-50 file:text-blue-700
-            hover:file:bg-blue-100"
+            file:bg-gray-100 file:text-gray-700
+            hover:file:bg-gray-200"
         />
         <button 
           onClick={handleUpload} 
-          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
           disabled={!file || uploading}
         >
           {uploading ? 'Parsing...' : 'Parse Resume'}

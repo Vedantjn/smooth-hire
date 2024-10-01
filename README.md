@@ -2,6 +2,9 @@
 
 Thank you for considering contributing to Easy Apply! We're building a platform to simplify the job application process for both companies and job seekers. Our goal is to create a user-friendly portal similar to Workday or Zoho, but with a focus on ease of use and efficiency. We welcome contributions and new ideas to make this platform even better. 🚀
 
+![Easy Apply Dashboard](/public/1.png)
+![Apply](/public/2.png)
+
 ## ⭐ Star This Repository
 
 If you find Easy Apply useful, please give it a star! It helps others discover the project. 🌟
@@ -17,6 +20,8 @@ If you find Easy Apply useful, please give it a star! It helps others discover t
 2. Make sure your code follows the project's style guidelines and passes all tests. ✅
 3. Submit a pull request with a clear and detailed description of your changes. 📝
 4. Suggest new features or improvements you think should be included to enhance the platform for both companies and applicants. 💡
+
+![Easy Apply Application Process](images/easy-apply-application-process.png)
 
 ## 🚀 Feature Requests
 
