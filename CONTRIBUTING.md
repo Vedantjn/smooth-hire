@@ -1,4 +1,4 @@
-# Contributing to Easy Apply
+# Contributing to SmoothHire
 
 Thank you for considering contributing to our project! Here are some guidelines to help you get started.
 
