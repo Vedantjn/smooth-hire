@@ -30,7 +30,7 @@ export default function CompanyLoginForm() {
       // Handle error (e.g., show error message)
     } finally {
       setSubmitting(false);
-      router.push("/companyA/dashboard");
+      router.push("/companyA/DashBoard");
     }
   }
 
