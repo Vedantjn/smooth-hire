@@ -2,7 +2,7 @@
 import '@/styles/globals.css'
 
 export const metadata = {
-  title: 'EasyApply',
+  title: 'SmoothHire',
   description: 'Streamlined job application process',
 }
 

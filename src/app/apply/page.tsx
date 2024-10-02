@@ -10,7 +10,7 @@ export default function ApplyPage() {
     <div className="min-h-screen bg-white">
       <header className="bg-black text-white py-6 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <Link href="/" className="text-3xl font-bold">EasyApply</Link>
+          <Link href="/" className="text-3xl font-bold">SmoothHire</Link>
         </div>
       </header>
 
@@ -25,7 +25,7 @@ export default function ApplyPage() {
 
       <footer className="bg-white py-8 px-4 sm:px-6 lg:px-8 mt-auto">
         <div className="container mx-auto text-center text-black">
-          <p>© 2024 EasyApply. All rights reserved.</p>
+          <p>© 2024 SmoothHire. All rights reserved.</p>
         </div>
       </footer>
     </div>

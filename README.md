@@ -1,13 +1,13 @@
-# 🤝 Contributing to Easy Apply
+# 🤝 Contributing to SmoothHire
 
-Thank you for considering contributing to Easy Apply! We're building a platform to simplify the job application process for both companies and job seekers. Our goal is to create a user-friendly portal similar to Workday or Zoho, but with a focus on ease of use and efficiency. We welcome contributions and new ideas to make this platform even better. 🚀
+Thank you for considering contributing to SmoothHire! We're building a platform to simplify the job application process for both companies and job seekers. Our goal is to create a user-friendly portal similar to Workday or Zoho, but with a focus on ease of use and efficiency. We welcome contributions and new ideas to make this platform even better. 🚀
 
-![Easy Apply Dashboard](/public/1.png)
+![SmoothHire Dashboard](/public/1.png)
 ![Apply](/public/2.png)
 
 ## ⭐ Star This Repository
 
-If you find Easy Apply useful, please give it a star! It helps others discover the project. 🌟
+If you find SmoothHire useful, please give it a star! It helps others discover the project. 🌟
 
 ## 🐛 Reporting Issues
 
@@ -31,10 +31,10 @@ We adhere to a code of conduct that promotes inclusivity. Please be respectful a
 
 ## 🔧 Help Us Improve
 
-Easy Apply is designed to be a comprehensive solution for companies looking to streamline their hiring process and for job seekers wanting a simplified application experience. Your contributions can help make this the go-to platform for both employers and applicants. 🏆
+SmoothHire is designed to be a comprehensive solution for companies looking to streamline their hiring process and for job seekers wanting a simplified application experience. Your contributions can help make this the go-to platform for both employers and applicants. 🏆
 
 ## 💼 For Companies
 
-If you're a company interested in using Easy Apply for your hiring needs, please contact us for more information on how we can tailor our solution to your requirements.
+If you're a company interested in using SmoothHire for your hiring needs, please contact us for more information on how we can tailor our solution to your requirements.
 
 Happy coding! 👨‍💻👩‍💻
