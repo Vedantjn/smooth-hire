@@ -5,6 +5,8 @@ Thank you for considering contributing to SmoothHire! We're building a platform 
 ![SmoothHire Dashboard](/public/1.png)
 ![Apply](/public/2.png)
 
+Deployed Link: https://smooth-hire.vercel.app/
+
 ## ⭐ Star This Repository
 
 If you find SmoothHire useful, please give it a star! It helps others discover the project. 🌟
