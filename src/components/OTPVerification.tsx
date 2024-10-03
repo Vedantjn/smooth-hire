@@ -102,8 +102,8 @@ const OTPVerification: React.FC<OTPInputProps> = ({
       </button>
       {showAlert ? (
         <div className="my-3 font-semibold text-center text-red-600 text-lg">
-          You've Entered Incorrect Code!
-        </div>
+          You&apos;ve Entered Incorrect Code!
+          </div>
       ) : (
         <></>
       )}
