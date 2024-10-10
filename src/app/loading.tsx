@@ -10,14 +10,17 @@ function loading() {
           fill="none"
           stroke="#000"
           className="motion-reduce:hidden animate-spin text-5xl font-bold text-pink-600"
+          aria-labelledby="loadingTitle"
+          role="img"
         >
+          <title id="loadingTitle">Loading animation</title>
           <circle
             cx="50"
             cy="50"
             r="45"
-            stroke-width="10"
-            stroke-dasharray="210 70"
-            stroke-linecap="round"
+            strokeWidth="10"
+            strokeDasharray="210 70"
+            strokeLinecap="round"
           ></circle>
         </svg>
         <div className="mt-3 text-4xl font-bold">Loading</div>
