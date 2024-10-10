@@ -11,7 +11,7 @@ export default function ApplyPage() {
     <div className="min-h-screen bg-white flex flex-col">
       <header className="bg-black text-white py-6 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <Link href="/" className="text-3xl font-bold">SmoothHire</Link>
+          <Link href="/" className="text-2xl font-bold">SmoothHire</Link>
         </div>
       </header>
 
