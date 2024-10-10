@@ -27,8 +27,8 @@ const CompanyRegisterForm: React.FC<CompanyRegisterFormProps> = ({
   const onSubmit = async (data: FormData) => {
     setSubmitting(true);
     try {
-      //   const response = await axios.post('/api/companyregsiter', { ...data })
-      //   console.log('Application submitted:', response.data)
+      const response = await axios.post("/api/companyregister", { ...data });
+      console.log("Application submitted:", response.data);
       console.log("Application submitted:", data);
     } catch (error) {
       console.error("Error submitting application:", error);
