@@ -77,7 +77,7 @@ export function AboutPageComponent() {
                     <MenuIcon className="h-6 w-6" aria-hidden="true" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:max-w-none">
+                <SheetContent side="right" className="w-[300px] sm:max-w-none bg-white">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <BriefcaseIcon className="h-8 w-8 text-blue-500" />
