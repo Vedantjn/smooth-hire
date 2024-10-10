@@ -20,8 +20,9 @@ If you find SmoothHire useful, please give it a star! It helps others discover t
 
 1. Fork the repository and create a new branch for your feature or bug fix. 🍴
 2. Make sure your code follows the project's style guidelines and passes all tests. ✅
-3. Submit a pull request with a clear and detailed description of your changes. 📝
-4. Suggest new features or improvements you think should be included to enhance the platform for both companies and applicants. 💡
+3. Ensure you are working on the latest version of the repository by fetching and merging the latest changes from the main branch. 🔄
+4. Submit a pull request with a clear and detailed description of your changes. 📝
+5. Suggest new features or improvements you think should be included to enhance the platform for both companies and applicants. 💡
 
 ## 🚀 Feature Requests
 
