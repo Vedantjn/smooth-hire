@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
@@ -23,11 +24,7 @@ export default function ApplyPage() {
         </div>
       </main>
 
-      <footer className="bg-white py-8 px-4 sm:px-6 lg:px-8 mt-auto">
-        <div className="container mx-auto text-center text-black">
-          <p>© 2024 SmoothHire. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
