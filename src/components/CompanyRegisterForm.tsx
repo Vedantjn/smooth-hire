@@ -1,8 +1,8 @@
 "use client";
-
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { useRouter } from "next/navigation";
+
 import Link from "next/link";
 
 type FormData = {
@@ -17,6 +17,7 @@ interface CompanyRegisterFormProps {
 const CompanyRegisterForm: React.FC<CompanyRegisterFormProps> = ({
   setVerificationEmail,
 }) => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -27,95 +28,101 @@ const CompanyRegisterForm: React.FC<CompanyRegisterFormProps> = ({
   const onSubmit = async (data: FormData) => {
     setSubmitting(true);
     try {
-      //   const response = await axios.post('/api/companyregsiter', { ...data })
-      //   console.log('Application submitted:', response.data)
+
+
       console.log("Application submitted:", data);
     } catch (error) {
       console.error("Error submitting application:", error);
     } finally {
       setSubmitting(false);
       setVerificationEmail("abc@xyz.com");
+      router.push("/companyA/DashBoard");
     }
   };
 
   return (
-    <>
-      <h2 className="text-3xl font-bold mb-2 text-center">
-        Register your Company
-      </h2>
-      <div className="text-lg text-gray-600 text-center">
-        Please enter your Company Details
-      </div>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="max-w-2xl mx-auto space-y-4 bg-white px-8 py-8 rounded-lg shadow-lg"
-      >
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-semibold text-black"
-          >
-            Company Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            {...register("name", { required: "Name is required" })}
-            className="pointer mt-1 block w-full px-4 py-3 bg-white border border-black rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition duration-150 ease-in-out"
-          />
-          {errors.name && (
-            <p className="mt-2 text-sm text-black">{errors.name.message}</p>
-          )}
-        </div>
 
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-semibold text-black"
-          >
-            Email
-          </label>
-          <input
-            id="email"
-            type="email"
-            {...register("email", { required: "Email is required" })}
-            className="mt-1 block w-full px-4 py-3 bg-white border border-black rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition duration-150 ease-in-out"
-          />
-          {errors.email && (
-            <p className="mt-2 text-sm text-black">{errors.email.message}</p>
-          )}
-        </div>
+    <div className="min-h-screen bg-white flex flex-col justify-center py-6 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
 
-        <div>
-          <label
-            htmlFor="password"
-            className="block text-sm font-semibold text-black"
-          >
-            Password
-          </label>
-          <input
-            id="password"
-            type="password"
-            {...register("password", { required: "Password is required" })}
-            className="mt-1 block w-full px-4 py-3 bg-white border border-black rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition duration-150 ease-in-out"
-          />
-        </div>
+        <h2 className="text-4xl font-extrabold text-black text-center mb-4">
+          Register your Company
+        </h2>
 
-        <button
-          type="submit"
-          className="w-full flex justify-center py-3 px-6 border border-black rounded-md shadow-sm text-base font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition duration-150 ease-in-out cursor-pointer"
-          disabled={submitting}
-        >
-          {submitting ? "Processing..." : "Register"}
-        </button>
-        <p className="text-center text-lg">
-          Your Company is Already Register{" "}
-          <Link href="/CompanyLogIn" className="hover:underline text-blue-600">
-            Log In
-          </Link>
+        <p className="text-lg text-gray-600 text-center mb-6">
+          Please enter your Company Details
         </p>
-      </form>
-    </>
+      </div>
+
+      <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow-md sm:rounded-lg sm:px-10 border border-black">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-black">
+                Company Name
+              </label>
+              <div className="mt-1">
+                <input
+                  id="name"
+                  type="text"
+                  {...register("name", { required: "Name is required" })}
+                  className="appearance-none block w-full px-3 py-2 border border-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                />
+              </div>
+              {errors.name && (
+                <p className="mt-2 text-sm text-black">{errors.name.message}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-black">
+                Email
+              </label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  type="email"
+                  {...register("email", { required: "Email is required" })}
+                  className="appearance-none block w-full px-3 py-2 border border-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                />
+              </div>
+              {errors.email && (
+                <p className="mt-2 text-sm text-black">{errors.email.message}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-black">
+                Password
+              </label>
+              <div className="mt-1">
+                <input
+                  id="password"
+                  type="password"
+                  {...register("password", { required: "Password is required" })}
+                  className="appearance-none block w-full px-3 py-2 border border-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                disabled={submitting}
+              >
+                {submitting ? "Processing..." : "Register"}
+              </button>
+            </div>
+          </form>
+          <div className="mt-6">
+            <p className="text-center text-sm text-gray-600">
+              Your Company is Already Registered?{" "}
+              <Link href="/CompanyLogIn" className="font-medium text-black hover:underline">
+                Log In
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

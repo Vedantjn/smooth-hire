@@ -3,12 +3,13 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from "next/navigation";
-import axios from 'axios'
+
 import Link from 'next/link';
 
 type FormData = {
   email: string
-  password:string
+
+  password: string
 }
 
 export default function CompanyLoginForm() {
@@ -16,60 +17,116 @@ export default function CompanyLoginForm() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
   const [submitting, setSubmitting] = useState(false)
 
-  
+
 
   const onSubmit = async (data: FormData) => {
     setSubmitting(true)
     try {
-    //   const response = await axios.post('/api/apply', { ...data, jobId })
-    //   console.log('Application submitted:', response.data)
+
+
       console.log('Application submitted:', data)
-      // Handle successful submission (e.g., show success message, redirect)
+
     } catch (error) {
       console.error('Error submitting application:', error)
-      // Handle error (e.g., show error message)
+
     } finally {
       setSubmitting(false);
       router.push("/companyA/DashBoard");
     }
   }
 
-  
+
 
   return (
-    <>
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto space-y-6 bg-white p-8 rounded-lg shadow-lg">
-      
-      <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-black">Email</label>
-        <input
-          id="email"
-          type="email"
-          {...register('email', { required: 'Email is required' })}
-          className="mt-1 block w-full px-4 py-3 bg-white border border-black rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition duration-150 ease-in-out"
-        />
-        {errors.email && <p className="mt-2 text-sm text-black">{errors.email.message}</p>}
+
+
+
+
+
+
+
+
+
+
+
+
+    <div className="min-h-screen bg-white flex flex-col justify-center py-6 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="text-4xl font-extrabold text-black text-center mb-4">
+          Login to your Company
+        </h2>
+        <p className="text-lg text-gray-600 text-center mb-6">
+          Please enter your login details
+        </p>
       </div>
 
-      <div>
-        <label htmlFor="password" className="block text-sm font-semibold text-black">Password</label>
-        <input
-          id="password"
-          type="password"
-          {...register('password', { required: 'Password is required' })}
-          className="mt-1 block w-full px-4 py-3 bg-white border border-black rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition duration-150 ease-in-out"
-        />
+
+
+
+
+
+
+
+
+      <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow-md sm:rounded-lg sm:px-10 border border-black">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-black">Email</label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  type="email"
+                  {...register('email', { required: 'Email is required' })}
+                  className="appearance-none block w-full px-3 py-2 border border-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                />
+              </div>
+              {errors.email && <p className="mt-2 text-sm text-black">{errors.email.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-black">Password</label>
+              <div className="mt-1">
+                <input
+                  id="password"
+                  type="password"
+                  {...register('password', { required: 'Password is required' })}
+                  className="appearance-none block w-full px-3 py-2 border border-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <button 
+                type="submit" 
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                disabled={submitting}
+              >
+                {submitting ? 'Logging in...' : 'Login'}
+              </button>
+            </div>
+          </form>
+          <div className="mt-6">
+            <p className="text-center text-sm text-gray-600">
+              New to this platform? {" "}
+              <Link href='/CompanyRegistration' className='font-medium text-black hover:underline'>
+                Register your Company
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
 
-      <button 
-        type="submit" 
-        className="w-full flex justify-center py-3 px-6 border border-black rounded-md shadow-sm text-base font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition duration-150 ease-in-out cursor-pointer"
-        disabled={submitting}
-      >
-        {submitting ? 'Logging in...' : 'Login'}
-      </button>
-    <p className="text-center text-lg">New to this platform? <Link href='/CompanyRegistration' className='hover:underline text-blue-600'>Register your Company</Link></p>
-    </form>
-    </>
+
+
+
+
+
+
+
+
+
+
+    </div>
   )
 }
