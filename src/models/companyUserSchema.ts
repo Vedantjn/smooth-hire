@@ -138,7 +138,7 @@ export async function createCollections() {
 
 export async function addCompany(company: Company) {
   const db = await getDatabase();
-  const companiesCollection = db.collection('companies');
+  const companiesCollection = db.collection('companies'); 
   await companiesCollection.insertOne(company);
 }
 
