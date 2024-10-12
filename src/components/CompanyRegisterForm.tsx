@@ -1,9 +1,9 @@
 "use client";
+
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-
 import Link from "next/link";
 
 type FormData = {
@@ -11,6 +11,7 @@ type FormData = {
   email: string;
   password: string;
 };
+
 interface CompanyRegisterFormProps {
   setVerificationEmail: React.Dispatch<React.SetStateAction<string | null>>;
 }
@@ -29,10 +30,8 @@ const CompanyRegisterForm: React.FC<CompanyRegisterFormProps> = ({
   const onSubmit = async (data: FormData) => {
     setSubmitting(true);
     try {
-
       const response = await axios.post("/api/companyregister", { ...data });
       console.log("Application submitted:", response.data);
-      console.log("Application submitted:", data);
     } catch (error) {
       console.error("Error submitting application:", error);
     } finally {
@@ -43,14 +42,11 @@ const CompanyRegisterForm: React.FC<CompanyRegisterFormProps> = ({
   };
 
   return (
-
     <div className="min-h-screen bg-white flex flex-col justify-center py-6 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-
         <h2 className="text-4xl font-extrabold text-black text-center mb-4">
           Register your Company
         </h2>
-
         <p className="text-lg text-gray-600 text-center mb-6">
           Please enter your Company Details
         </p>
