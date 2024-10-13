@@ -12,7 +12,7 @@ export default function Navbar() {
               Dashboard
             </Link>
             <Link href="/CompanyLogIn" className="hover:underline text-lg mx-2">
-              Company LogIn
+              Company LogIn/Register
             </Link>
           </div>
         </nav>

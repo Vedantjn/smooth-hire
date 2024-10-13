@@ -12,8 +12,8 @@ const page: React.FC = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-81">
-        <div className="max-w-3xl p-6 mx-auto bg-white shadow-md rounded-lg overflow-hidden">           
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-81 flex-grow">
+        <div className="max-w-3xl mx-auto">           
             <RegistrationOtpVerification/>
         </div>
       </main>

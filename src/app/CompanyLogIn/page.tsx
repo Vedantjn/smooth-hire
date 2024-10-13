@@ -15,16 +15,11 @@ const page: React.FC = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
-          <div className="p-6">
-          <h2 className="text-3xl font-bold mb-2 text-center">Log In</h2>
-          <div className="text-lg text-gray-600 text-center">Please enter your Company Details</div>
-            <CompanyLoginForm />
-          </div>
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8  flex-grow">
+        <div className="max-w-3xl mx-auto">
+          <CompanyLoginForm />
         </div>
       </main>
-
     </div>
     </LayoutComponent>
   );

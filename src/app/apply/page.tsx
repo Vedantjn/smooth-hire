@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { LayoutComponent } from '@/components/layout'
