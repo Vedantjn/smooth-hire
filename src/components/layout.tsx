@@ -43,7 +43,7 @@ export function LayoutComponent({ children }: LayoutProps) {
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="mr-2 text-white border-white hover:bg-gray-00">Log in</Button>
+                  <Button variant="outline" className="mr-2 text-white border-white hover:bg-gray-300">Log in</Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
