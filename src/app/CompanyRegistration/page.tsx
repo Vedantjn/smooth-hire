@@ -1,9 +1,10 @@
 import React from "react"
 import RegistrationOtpVerification from "@/components/RegistrationOtpVerification"
 import Link from "next/link"
-
+import { LayoutComponent } from "@/components/layout"
 const page: React.FC = () => {
   return (
+    <LayoutComponent>
     <div className="min-h-screen bg-white">
       <header className="bg-black text-white py-6 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
@@ -16,13 +17,8 @@ const page: React.FC = () => {
             <RegistrationOtpVerification/>
         </div>
       </main>
-
-      <footer className="py-5 px-4 sm:px-6 lg:px-8 mt-auto">
-        <div className="container mx-auto text-center text-black">
-          <p>© 2024 SmoothHire. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
+    </LayoutComponent>
   )
 }
 
