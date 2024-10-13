@@ -45,7 +45,7 @@ export function LayoutComponent({ children }: LayoutProps) {
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" className="mr-2 text-white border-white hover:bg-gray-300">Log in</Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className='bg-white'>
                   <DropdownMenuItem>
                     <UserIcon className="mr-2 h-4 w-4" />
                     <span>Log in as Applicant</span>
@@ -60,7 +60,7 @@ export function LayoutComponent({ children }: LayoutProps) {
                 <DropdownMenuTrigger asChild>
                   <Button className="text-black bg-white hover:bg-gray-200">Sign up</Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className='bg-white'>
                   <DropdownMenuItem>
                     <UserIcon className="mr-2 h-4 w-4" />
                     <Link href="/apply"><span>Sign up as Applicant</span></Link>
