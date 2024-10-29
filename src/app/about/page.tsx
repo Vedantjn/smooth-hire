@@ -1,11 +1,11 @@
 // import Image from "next/image";
-import { HomePageComponent } from "@/components/home-page";
+import { AboutPageComponent } from "@/components/about-page";
 
 
 export default function Home() {
   return (
       <div className="">
-                <HomePageComponent />
+                <AboutPageComponent />
                     </div>
                           );
                         }

@@ -1,11 +1,12 @@
 import React from "react";
 import CompanyLoginForm from "@/components/CompanyLoginForm";
 import Link from "next/link";
-import Footer from "@/components/Footer";
+import { LayoutComponent } from "@/components/layout";
 
 const page: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <LayoutComponent>
+    <div className="min-h-screen bg-white">
       <header className="bg-black text-white py-6 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <Link href="/" className="text-3xl font-bold">
@@ -19,9 +20,8 @@ const page: React.FC = () => {
           <CompanyLoginForm />
         </div>
       </main>
-
-      <Footer />
     </div>
+    </LayoutComponent>
   );
 }
 
